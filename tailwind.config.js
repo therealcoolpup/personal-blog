@@ -9,7 +9,12 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'pri': '#027efb',
+        'sec': '#696969'
+      }
+    },
   },
   plugins: [],
 }
