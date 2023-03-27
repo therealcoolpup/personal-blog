@@ -1,3 +1,37 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+
+    * {
+        @apply duration-300;
+    }
+
+    html {
+        body {
+
+            @apply text-sec;
+
+            nav {
+                ul {
+                    li {
+                        @apply hover:text-slate-600 duration-100;
+                    }
+                }
+            }
+
+            .btn, .btn-sec {
+                @apply rounded-md flex justify-center items-center px-4 py-3 hover:shadow-md;
+            }
+
+            .btn {
+                @apply bg-pri text-white hover:text-white;
+            }
+
+            .btn-sec {
+                @apply bg-white text-pri border-[1px] border-pri hover:text-pri;
+            }
+        }
+    }
+}
