@@ -19,7 +19,7 @@ const Nav = () => {
           </Link>
         </li>
       </div>
-      <div className='flex flex-row gap-4 items-center'>
+      <div className='flex flex-row gap-6 items-center'>
         <li><Link href="/about">About</Link></li>
         <li><Link href="/posts">Posts</Link></li>
         <li className='btn-sec'><Link href="/contact">Contact</Link></li>
