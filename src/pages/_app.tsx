@@ -3,6 +3,8 @@ import type { AppProps } from 'next/app';
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import { ApolloClient, InMemoryCache, createHttpLink, ApolloProvider } from '@apollo/client';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const httpLink = createHttpLink({
   uri: 'https://blog-backend.azaber.com/graphql', // replace with your GraphQL API endpoint
@@ -18,7 +20,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <div>
       <Nav />
-      <main className="flex flex-col justify-center items-center w-5/6 mx-auto my-3">
+      <main className="flex flex-col justify-center items-center w-full mx-auto">
         <ApolloProvider client={client}>
           <Component {...pageProps} />
         </ApolloProvider>
