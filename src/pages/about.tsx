@@ -1,6 +1,10 @@
 import React from 'react'
 import { useQuery, gql } from '@apollo/client'
 import { PageContent } from '@/interfaces/PageContent';
+import Fade from 'react-reveal/Fade';
+import Slide from 'react-reveal/Slide';
+
+
 
 const ABOUT_QUERY = gql`
   query AboutPage {
@@ -27,9 +31,15 @@ const About = () => {
   return (
     <div>
       {featuredImage && (
-        <img className='w-full object-cover' src={featuredImage.node.mediaItemUrl} alt={featuredImage.node.altText} />
+        <Fade>
+          <img className='w-full h-[70vh] object-cover' src={featuredImage.node.mediaItemUrl} alt={featuredImage.node.altText} />
+        </Fade>
       )}
-      <p className='my-3'><div dangerouslySetInnerHTML={{ __html: content }} /></p>
+      <div className='main-container'>
+        <Slide bottom>
+          <p className='my-3'><div dangerouslySetInnerHTML={{ __html: content }} /></p>
+        </Slide>
+      </div>
     </div>
   )
 }
