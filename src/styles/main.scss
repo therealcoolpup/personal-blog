@@ -76,6 +76,10 @@
                 @apply bg-pri text-white hover:drop-shadow-md hover:bg-pri hover:text-white focus:bg-pri focus:text-white;
             }
 
+            .hero-img {
+                @apply w-full h-[70vh] object-cover;
+            }
+
             .btn-sec {
                 @apply bg-white text-pri border-[1px] border-pri hover:text-pri;
             }

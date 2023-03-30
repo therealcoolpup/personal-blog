@@ -32,7 +32,7 @@ const About = () => {
     <div>
       {featuredImage && (
         <Fade>
-          <img className='w-full h-[70vh] object-cover' src={featuredImage.node.mediaItemUrl} alt={featuredImage.node.altText} />
+          <img className='hero-img' src={featuredImage.node.mediaItemUrl} alt={featuredImage.node.altText} />
         </Fade>
       )}
       <div className='main-container'>
