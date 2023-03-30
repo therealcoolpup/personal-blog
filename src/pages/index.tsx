@@ -59,7 +59,7 @@ const Home = () => {
         <Carousel fade interval={3000} controls={false}>         
           {posts.map(post => (
             <Carousel.Item key={post.id}>
-              <div className='flex flex-col justify-center items-center h-[80vh] h-96'>
+              <div className='flex flex-col justify-center items-center h-full tablet:h-[80vh]'>
                 {post.featuredImgUrl && (
                   <div className='relative w-full'>
                     <img className='w-full object-fill' src={post.featuredImgUrl} alt={post.featuredImgAlt} />
