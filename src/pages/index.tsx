@@ -4,13 +4,13 @@ import { Post } from '@/interfaces/Post'
 import Carousel from 'react-bootstrap/Carousel';
 import Link from 'next/link';
 
-
 const RECENT_POSTS_QUERY = gql`
   query RecentPosts {
     posts(first: 3, where: {status: PUBLISH}) {
       edges {
         node {
-          id
+          
+          postId
           title
           content
           featuredImage {
@@ -29,7 +29,7 @@ const RECENT_POSTS_QUERY = gql`
       }
     }
   }
-`
+`;
 
 const Home = () => {
   const { loading, error, data } = useQuery(RECENT_POSTS_QUERY)
@@ -38,14 +38,15 @@ const Home = () => {
   if (error) return <p>Error: {error.message}</p>
 
   const posts: Post[] = data.posts.edges.map(({ node }) => ({
-    id: node.id,
+    id: node.postId,
     title: node.title,
     content: node.content,
     featuredImgAlt: node.featuredImage?.node.altText || '',
     featuredImgUrl: node.featuredImage?.node.mediaItemUrl || '',
     category: node.categories.nodes[0]?.name || '',
     datePosted: node.date,
-  }))
+  }));
+
 
   return (
     <>
@@ -69,7 +70,7 @@ const Home = () => {
               </div>
               <Carousel.Caption>
                 <div className='h-56 flex justify-start items-start'>
-                  <h3 className='text-white'><Link href={"/about"}>{post.title}</Link></h3>
+                  <h3 className='text-white'><Link href={`/posts/${post.id}`}>{post.title}</Link></h3>
                 </div>
               </Carousel.Caption>
             </Carousel.Item>
