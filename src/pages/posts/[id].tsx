@@ -19,6 +19,7 @@ const GET_POST_QUERY = gql`
         edges {
           node {
             id
+            name
           }
         }
       }
@@ -46,12 +47,23 @@ const Post = () => {
     datePosted: data.postBy.date,
   }
 
+  const date = new Date(post.datePosted);
+  const formattedDate = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`
+
+
   return (
     <div className='w-full'>
       <h1>{post.title}</h1>
       <img className='hero-img' src={post.featuredImgUrl} alt={post.featuredImgAlt} />
       
-      <div className='my-3 main-container' dangerouslySetInnerHTML={{ __html: post.content }} />
+      <div className='main-container'>
+        <div className='my-3' dangerouslySetInnerHTML={{ __html: post.content }} />
+        <div className='flex flex-row w-full'>
+          <p className='text-left w-1/2'>Published on {formattedDate}</p>
+          <p className='text-right w-1/2'>Category: {post.category}</p>
+        </div>
+        
+      </div>
     </div>
   )
 }
