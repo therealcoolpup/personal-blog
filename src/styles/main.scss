@@ -21,14 +21,9 @@
             }
 
             nav {
-
-                ul {
-                    li {
-                        a {
-                            @apply text-pri hover:text-blue-600 duration-100;
-                        }
-                    }
-                }
+                a {
+                    @apply text-pri hover:text-blue-600 duration-100;
+                }   
             }
 
             p {
