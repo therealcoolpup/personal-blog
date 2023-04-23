@@ -55,7 +55,7 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="w-full">
-        <Carousel fade interval={1500} controls={false}>
+        <Carousel fade interval={750} controls={false} indicators={false}>
           {posts.map(post => (
             <Carousel.Item key={post.id}>
               <div className="flex flex-col justify-center items-center h-[70vh] phone:h-[80vh]">
