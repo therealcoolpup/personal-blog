@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import Slide from "react-reveal/Slide";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBurger } from "@fortawesome/free-solid-svg-icons";
 
