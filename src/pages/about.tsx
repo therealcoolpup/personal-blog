@@ -4,11 +4,6 @@ import { PageContent } from "@/interfaces/PageContent";
 import Fade from "react-reveal/Fade";
 import Slide from "react-reveal/Slide";
 
-declare module "react-reveal/Fade" {
-  const Fade: any;
-  export default Fade;
-}
-
 const ABOUT_QUERY = gql`
   query AboutPage {
     pageBy(uri: "about") {
