@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+
+    * {
+        @apply duration-300;
+    }
+
+    html {
+
+        @apply overflow-y-scroll overflow-x-hidden scrollbar-thin scrollbar-thumb-pri scrollbar-track-gray-500;
+
+        body {
+
+            @apply text-sec;
+
+            a {
+                @apply no-underline text-white hover:text-slate-300;
+            }
+
+            nav {
+                a {
+                    @apply text-pri hover:text-blue-600 duration-100;
+                }   
+            }
+
+            p {
+                @apply text-lg;
+            }
+
+            form {
+                label {
+                    
+                }
+
+                .form-row {
+                    @apply flex flex-col phone:flex-row;
+                    
+                    .form-col {
+                        @apply phone:flex flex-row;
+
+                        label {
+                         @apply w-fit;   
+                        }
+                        input {
+                            @apply w-full phone:w-max;
+                        }
+                    }
+
+                    label {
+                        @apply phone:mr-2;
+                    }
+
+                    label, input {
+                        @apply block w-full phone:inline;
+                    }
+                }
+
+                input, textarea {
+                    @apply p-3 mb-3 border-b-[3px] focus:border-b-pri focus:border-b-4;
+                }
+            }
+
+            .btn, .btn-sec {
+                @apply rounded-md phone:flex justify-center items-center px-4 py-3 hover:shadow-md;
+            }
+
+            .btn {
+                @apply bg-pri text-white hover:drop-shadow-md hover:bg-pri hover:text-white focus:bg-pri focus:text-white;
+            }
+
+            .hero-img {
+                @apply w-full h-[70vh] object-cover;
+            }
+
+            .btn-sec {
+                @apply bg-white text-pri border-[1px] border-pri hover:text-pri;
+            }
+
+            .main-container {
+                @apply w-5/6 mx-auto flex flex-col items-center justify-center;
+            }
+
+            .error {
+                @apply text-red-500 font-bold;
+            }
+
+            .overlay {
+                
+                background-color: rgba(0,0,0,0.4);
+
+                @apply absolute top-0 left-0 w-full h-full;
+            }
+
+            .required {
+                @apply text-red-500 font-bold;
+            }
+              
+        }
+    }
+}
