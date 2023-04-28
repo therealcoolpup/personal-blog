@@ -24,7 +24,7 @@ const About = () => {
   if (loading) return <p>Loading...</p>;
   if (error) return <p className="error">Error: {error.message}</p>;
 
-  const { content, featuredImage } = data.pageBy;
+  const { content, featuredImage } = data?.pageBy ?? {};
 
   return (
     <div>
