@@ -58,25 +58,25 @@ const Home = () => {
         <Carousel fade interval={750} controls={false} indicators={false}>
           {posts.map(post => (
             <Carousel.Item key={post.id}>
-              <div className="flex flex-col justify-center items-center h-[70vh] phone:h-[80vh]">
-                {post.featuredImgUrl && (
-                  <div className="relative w-full">
-                    <img
-                      className="w-full object-cover h-[70vh] phone:h-auto"
-                      src={post.featuredImgUrl}
-                      alt={post.featuredImgAlt}
-                    />
-                    <div className="overlay"></div>
-                  </div>
-                )}
-              </div>
-              <Carousel.Caption>
-                <div className="h-56 flex justify-start items-start">
-                  <h3 className="text-white">
-                    <Link href={`/posts/${post.id}`}>{post.title}</Link>
-                  </h3>
+              <Link href={`/posts/${post.id}`}>
+                <div className="flex flex-col justify-center items-center h-[70vh] phone:h-[80vh]">
+                  {post.featuredImgUrl && (
+                    <div className="relative w-full">
+                      <img
+                        className="w-full object-cover h-[70vh] phone:h-auto"
+                        src={post.featuredImgUrl}
+                        alt={post.featuredImgAlt}
+                      />
+                      <div className="overlay"></div>
+                    </div>
+                  )}
                 </div>
-              </Carousel.Caption>
+                <Carousel.Caption>
+                  <div className="h-56 flex justify-start items-start">
+                    <h3 className="text-white">{post.title}</h3>
+                  </div>
+                </Carousel.Caption>
+              </Link>
             </Carousel.Item>
           ))}
         </Carousel>
