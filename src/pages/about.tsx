@@ -1,6 +1,5 @@
 import React from "react";
 import { useQuery, gql } from "@apollo/client";
-import { PageContent } from "@/interfaces/PageContent";
 import Fade from "react-reveal/Fade";
 import Slide from "react-reveal/Slide";
 
@@ -19,12 +18,13 @@ const ABOUT_QUERY = gql`
 `;
 
 const About = () => {
-  const { loading, error, data } = useQuery<PageContent>(ABOUT_QUERY);
+  const { loading, error, data } = useQuery(ABOUT_QUERY);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p className="error">Error: {error.message}</p>;
 
-  const { content, featuredImage } = data?.pageBy ?? {};
+  const content = data?.pageBy.content;
+  const featuredImage = data?.pageBy.featuredImage;
 
   return (
     <div>
