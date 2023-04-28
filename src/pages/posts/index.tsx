@@ -53,7 +53,7 @@ const Index = () => {
   if (error) return <div>Error: {error.message}</div>;
 
   const posts = data.posts.edges
-    .filter(post =>
+    .filter((post: any) =>
       post.node.title.toLowerCase().includes(searchQuery.toLowerCase())
     )
     .slice(0, numPosts);
@@ -70,7 +70,7 @@ const Index = () => {
         />
       </div>
       <div className="flex flex-row flex-wrap gap-3 my-3 mx-auto justify-center items-center">
-        {posts.map(post => {
+        {posts.map((post: any) => {
           // Parse the date string
           const date = new Date(post.node.date);
 
@@ -87,7 +87,7 @@ const Index = () => {
                   <p className="text-sec text-lg">
                     Categories:{" "}
                     {post.node.categories.edges
-                      .map(category => category.node.name)
+                      .map((category: any) => category.node.name)
                       .shift()}
                   </p>
                   <p className="text-sec text-md">
