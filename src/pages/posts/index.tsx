@@ -34,6 +34,7 @@ const Index = () => {
   const { loading, error, data } = useQuery(POSTS_QUERY);
   const [numPosts, setNumPosts] = useState(9);
   const [searchQuery, setSearchQuery] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -56,7 +57,20 @@ const Index = () => {
     .filter((post: any) =>
       post.node.title.toLowerCase().includes(searchQuery.toLowerCase())
     )
+    .filter((post: any) =>
+      selectedCategory
+        ? post.node.categories.edges[0].node.name === selectedCategory
+        : true
+    )
     .slice(0, numPosts);
+
+  const uniqueCategories = Array.from(
+    new Set(
+      data.posts.edges.flatMap((post: any) =>
+        post.node.categories.edges.map((category: any) => category.node.name)
+      )
+    )
+  );
 
   return (
     <div>
@@ -68,6 +82,18 @@ const Index = () => {
           value={searchQuery}
           onChange={e => setSearchQuery(e.target.value)}
         />
+        <select
+          value={selectedCategory}
+          onChange={e => setSelectedCategory(e.target.value)}
+          className="border border-gray-400 px-4 py-2 rounded ml-3"
+        >
+          <option value="">All Categories</option>
+          {uniqueCategories.map((category: string, index: number) => (
+            <option key={index} value={category}>
+              {category}
+            </option>
+          ))}
+        </select>
       </div>
       <div className="flex flex-row flex-wrap gap-3 my-3 mx-auto justify-center items-center w-4/5">
         {posts.map((post: any) => {
