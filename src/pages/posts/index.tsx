@@ -64,7 +64,7 @@ const Index = () => {
     )
     .slice(0, numPosts);
 
-  const uniqueCategories = Array.from(
+  const uniqueCategories: string[] = Array.from(
     new Set(
       data.posts.edges.flatMap((post: any) =>
         post.node.categories.edges.map((category: any) => category.node.name)
