@@ -69,7 +69,7 @@ const Index = () => {
           onChange={e => setSearchQuery(e.target.value)}
         />
       </div>
-      <div className="flex flex-row flex-wrap gap-3 my-3 mx-auto justify-center items-center">
+      <div className="flex flex-row flex-wrap gap-3 my-3 mx-auto justify-center items-center w-4/5">
         {posts.map((post: any) => {
           // Parse the date string
           const date = new Date(post.node.date);
