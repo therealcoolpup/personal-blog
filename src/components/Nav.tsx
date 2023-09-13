@@ -41,11 +41,22 @@ const Nav = () => {
           >
             Contact
           </Link>
+          <div className="flex flex-row rounded-lg mt-3">
+            <a href="https://www.linkedin.com/in/azaber/" target="_blank">
+              <i className="p-3 text-4xl fa-brands fa-linkedin-in hover:cursor-pointer text-white bg-[#0e66c2]"></i>
+            </a>
+            <a href="http://github.com/realazaber" target="_blank">
+              <i className="p-3 text-4xl fa-brands fa-github text-white bg-[#0c1117]"></i>
+            </a>
+            <Link href="/contact">
+              <i className="p-3 text-4xl fa-regular fa-envelope text-white bg-[#f15a24]"></i>
+            </Link>
+          </div>
         </div>
       </div>
 
       {/* Main navbar */}
-      <nav className="p-3 fixed top-0 left-0 right-0 z-50 bg-white dark:bg-slate-800 flex flex-row justify-between items-center">
+      <nav className="h-20 shadow-md p-3 fixed top-0 left-0 right-0 z-50 bg-white dark:bg-slate-800 flex flex-row justify-between items-center">
         <div>
           <Link href="/">
             <Image

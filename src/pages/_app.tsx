@@ -9,6 +9,8 @@ import {
   ApolloProvider,
 } from "@apollo/client";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Socials from "@/components/Socials";
+import Head from "next/head";
 
 const httpLink = createHttpLink({
   uri: "https://blog-backend.azaber.com/graphql", // replace with your GraphQL API endpoint
@@ -21,14 +23,24 @@ const client = new ApolloClient({
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <div>
-      <Nav />
-      <main className="mt-24 flex flex-col justify-center items-center w-full mx-auto">
-        <ApolloProvider client={client}>
-          <Component {...pageProps} />
-        </ApolloProvider>
-      </main>
-      <Footer />
-    </div>
+    <>
+      {" "}
+      <Head>
+        <script
+          src="https://kit.fontawesome.com/1e1f15503e.js"
+          crossOrigin="anonymous"
+        ></script>
+      </Head>
+      <div>
+        <Nav />
+        <main className="mt-20 flex flex-col justify-center items-center w-full mx-auto">
+          <ApolloProvider client={client}>
+            <Component {...pageProps} />
+          </ApolloProvider>
+        </main>
+        <Socials />
+        <Footer />
+      </div>
+    </>
   );
 }

@@ -1,5 +1,5 @@
 export interface Post {
-  id: Number;
+  id: number;
   title: string;
   content: string;
   featuredImgAlt: string;
