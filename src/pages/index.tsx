@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const RECENT_POSTS_QUERY = gql`
   query RecentPosts {
-    posts(first: 3, where: { status: PUBLISH }) {
+    posts(first: 4, where: { status: PUBLISH }) {
       edges {
         node {
           postId
@@ -49,7 +49,7 @@ const Home = () => {
   return (
     <>
       <Head>
-        <title>Azaber personal blog</title>
+        <title>Home | Azaber Blog</title>
         <meta name="description" content="Azaber personal blog" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
