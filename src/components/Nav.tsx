@@ -45,7 +45,7 @@ const Nav = () => {
       </div>
 
       {/* Main navbar */}
-      <nav className="p-3 fixed top-0 left-0 right-0 z-50 bg-white dark:bg-slate-800 flex flex-row justify-between items-center">
+      <nav className="h-20 shadow-md p-3 fixed top-0 left-0 right-0 z-50 bg-white dark:bg-slate-800 flex flex-row justify-between items-center">
         <div>
           <Link href="/">
             <Image
