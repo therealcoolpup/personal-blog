@@ -40,10 +40,10 @@ const Index = () => {
   useEffect(() => {
     const handleScroll = () => {
       if (
-        window.innerHeight + document.documentElement.scrollTop >=
+        window.outerHeight + document.documentElement.scrollTop >=
         document.documentElement.offsetHeight
       ) {
-        setNumPosts(prevNumPosts => prevNumPosts + 3);
+        setNumPosts((prevNumPosts: any) => prevNumPosts + 3);
       }
     };
 
